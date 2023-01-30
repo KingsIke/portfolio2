@@ -1,5 +1,6 @@
 import Link from "next/link";
 // import Link from "next/dist/client/link";
+// 1,10
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircle from "./BackgroundCircle/BackgroundCircle";
@@ -24,7 +25,7 @@ export default function Hero({ }: Props) {
                 src="https://res.cloudinary.com/logistics-kingsike/image/upload/v1675074000/FOOD/WhatsApp_Image_2023-01-30_at_10.57.35_AM_tsfess.jpg"
                 alt="Kings=Ike"
             />
-            <div>
+            <div className="z-20 ">
                 <h2 className=" uppercase text-gray-500 pb-2 tracking-[15px] text-l font-bold ">
                     {" "}
                     OGBONNAYA KINGSLEY

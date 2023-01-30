@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import { Inter } from '@next/font/google'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import About from '@/components/About'
 
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -19,23 +20,26 @@ const Home: NextPage = () => {
       <Header />
       {/* Hero */}
 
-      <section id="hero" className='snap-center'>
+      <section id="hero" className='snap-start'>
         <Hero />
       </section>
 
       {/* About */}
+      <section id='about' className='snap-center'>
+        <About />
+      </section>
 
       {/* Experience */}
+      {/* <section id=></section> */}
 
       {/* Skill */}
 
-      <h1 className="p-10 text-red-500">Hy is Kingsike</h1>
-      <h1 className="text-3xl font-bold underline">Kingsike</h1>
+
 
       {/* Projects */}
 
       {/* Contact Me */}
-    </div>
+    </div >
   )
 }
 export default Home
