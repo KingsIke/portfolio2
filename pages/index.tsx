@@ -7,6 +7,7 @@ import About from '@/components/About'
 import WorkExperience from '@/components/WorkExperience'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
+import Contact from '@/components/Contact/Contact'
 
 
 
@@ -51,6 +52,9 @@ const Home: NextPage = () => {
       </section>
 
       {/* Contact Me */}
+      <section id="contact" className='snap-center'>
+        <Contact />
+      </section>
     </div >
   )
 }
