@@ -42,7 +42,7 @@ const About = ({ }: Props) => {
                 </h4>
                 <p className="text-base">
 
-                    I'm Kingsley. 👑 Am also known as KINGS=IKE! a Junior Full Stack Developer. Here's a little  bit of info about me...
+                    I'm Kingsley also known as KINGS=IKE! 👑 a Junior Full Stack Developer. Here's a little  bit of info about me...
                     I've been coding for over 3-4 years now. As a Full Stack developer, I've worked on-site and remotely both as an Internships, Stack Rep, and junior Dev with startups and large companies to help build & scale their vision and mission. Along my journey, I realized my passion existed in helping others excel and pursue their dreams as upcoming developers. 🎖 With this passion, I  know that am going to make an impact in my community and across the globe at large.
                     In addition to my technical skills, I have training in soft skills on Agile methodology using scrum,  jira, etc  for  such as effective communication, teamwork, and emotional intelligence. I understand the importance of these skills in fostering a positive and productive work environment. Also not forgetting am a programmer with passion for bodybuilding, fashion design, swimming, and music. These hobbies allow me to showcase my creativity, maintain a healthy lifestyle, and unwind from the demands of my work🥇.
                 </p>
