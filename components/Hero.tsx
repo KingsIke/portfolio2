@@ -18,10 +18,10 @@ export default function Hero({ }: Props) {
         delaySpeed: 1700,
     });
     return (
-        <div className=" h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+        <div className=" h-screen block sm:flex sm:flex-col space-y-8 items-center justify-center text-center overflow-hidden">
             <BackgroundCircle />
             <img
-                className="relative rounded-full h-32 w-32 mx-auto object-cover "
+                className="h-22 w-20 mx-40 relative rounded-full sm:h-32 sm:w-32 sm:mx-auto object-cover "
                 src="https://res.cloudinary.com/logistics-kingsike/image/upload/v1675074000/FOOD/WhatsApp_Image_2023-01-30_at_10.57.35_AM_tsfess.jpg"
                 alt="Kings=Ike"
             />
@@ -30,7 +30,7 @@ export default function Hero({ }: Props) {
                     {" "}
                     OGBONNAYA KINGSLEY
                 </h2>
-                <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+                <h1 className="text-2xl sm:text-5xl lg:text-6xl font-semibold px-10">
                     <span className="mr-3">{text}</span>
                     <Cursor cursorColor="#F7AB0A" />
                 </h1>
