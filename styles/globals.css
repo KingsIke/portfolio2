@@ -9,5 +9,5 @@
 }
 
 .contactInput {
-    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] ;
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-yellow-500 placeholder-yellow-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 ;
 }

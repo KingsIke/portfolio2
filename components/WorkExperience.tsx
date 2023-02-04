@@ -10,9 +10,9 @@ const WorkExperience = ({ }: Props) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className='h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
-            <h3 className='absolute top-4 uppercase tracking-[10px] text-red-500 text-2xl mb-10'>Work Experience</h3>
-            <div className='w-full flex space-x-5 overflow-x-scroll p-5 snap-x snap-mandatory'>
+            className='h-screen block sm:flex relative sm:overflow-hidden sm:flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
+            <h3 className='absolute top-2 text-1xl sm:top-4 uppercase tracking-[10px] text-yellow-500 sm:text-2xl mb-10'>Work Experience</h3>
+            <div className='w-full pt-2 space-x-1 flex sm:space-x-5 overflow-x-scroll sm:p-5 snap-mandatory snap-x '>
                 <ExperienceCard />
                 <ExperienceCard />
                 <ExperienceCard />

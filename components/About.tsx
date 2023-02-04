@@ -37,8 +37,8 @@ const About = ({ }: Props) => {
                 className=" -mb-20 md:mb-0 flex-shrink-0 h-10 w-10  sm:h-56 sm:w-56 sm:rounded-full object-cover rounded-lg md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[500px]" />
 
             <div className=" space-y-1 px-0 pt-14 xs:space-y-10 sm:px-0 md:px-10">
-                <h4 className="text-md  xs:text-4xl font-semibold">
-                    Here is a {''}<span className="underline decoration-[#F7AB0A]/50">Little </span>{" "} Background
+                <h4 className="text-md  sm:text-4xl font-semibold">
+                    Here is a {''}<span className="underline decoration-[#F7A223]">Little  Background </span>
                 </h4>
                 <p className="text-sm sm:text-base">
                     I'm Kingsley also known as KINGS=IKE! 👑 a Junior Full Stack Developer. Here's a little  bit of info about me...
