@@ -58,12 +58,12 @@ const Header = ({ }: Props) => {
                 className='flex flex-row items-center text-gray-300 cursor-pointer '>
                 {/* social  Icons */}
                 <SocialIcon className='cursor-pointer'
-                    url="https://twitter.com/jaketrent"
+                    url="#contact"
                     fgColor='gray'
                     network='email'
                     bgColor='transparent'
                 />
-                <p className='uppercase hidden md:inline-flex text-sm text-gray-400 ' >Get In Touch </p>
+                <p className='uppercase hidden md:inline-flex text-sm text-gray-400 ' ><a href='#contact'>Get In Touch</a> </p>
             </motion.div>
         </header>
     )

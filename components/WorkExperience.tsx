@@ -11,8 +11,8 @@ const WorkExperience = ({ }: Props) => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
             className='h-screen block sm:flex relative sm:overflow-hidden sm:flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
-            <h3 className='absolute top-2 text-1xl sm:top-4 uppercase tracking-[10px] text-yellow-500 sm:text-2xl mb-10'>Work Experience</h3>
-            <div className='w-full pt-2 space-x-1 flex sm:space-x-5 overflow-x-scroll sm:p-5 snap-mandatory snap-x '>
+            <h3 className='absolute top-12 text-1xl sm:top-4 uppercase tracking-[10px] text-yellow-500 sm:text-2xl mb-10'>Work Experience</h3>
+            <div className='w-full pt-2 space-x-1 flex sm:space-x-5 overflow-x-scroll sm:p-5 snap-mandatory snap-x scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
                 <ExperienceCard />
                 <ExperienceCard />
                 <ExperienceCard />

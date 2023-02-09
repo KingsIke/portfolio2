@@ -4,16 +4,20 @@ import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
-    example: string,
-    exampleRequired: string,
+    name: string,
+    email: string,
+    subject: string,
+    message: string,
 };
 
 
 
-const Contact = ({ }: Props) => {
+const Contact = ({ }) => {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+    const { register, handleSubmit } = useForm<Inputs>();
+    const onSubmit: SubmitHandler<Inputs> = (formData) => {
+        window.location.href = `mailto:ogbonnayakingsike@gmail.com?subject=${formData.subject}&body=Hi, My name is ${formData.name}. ${formData.message} (${formData.email})`
+    };
 
     return (
         <div className=' h-screen flex relative flex-col md:text-left md:flex-row max-w-7xl  justify-evenly mx-auto items-center sm: text-xs '>
@@ -40,22 +44,22 @@ const Contact = ({ }: Props) => {
                     <div className='flex items-center space-x-1 sm:space-x-5 justify-center '>
                         <MapPinIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
 
-                        <p className='text-xl sm:text-2xl'>Nö 2 Olanrewaju Kingdom-Hall Lekki-Epe Express</p>
+                        <p className='text-l sm:text-2xl'>Nö 2 Olanrewaju Kingdom-Hall Lekki-Epe Express</p>
                     </div>
 
 
                 </div>
                 {/* <form className='block sm:flex sm:flex-col md:flex md:flex-col lg:flex lg:flex-col xl:flex xl:flex-col'> */}
-                <form className=' flex space-y-2 w-fit mx-auto text-green-500 sm:text-yellow-600 sm:space-y-2 sm:flex flex-col  md:text-blue-600 lg:text-yellow-500 xl:text-yellow-600 '>
-                    <div className='space-x-1 sm:flex sm:space-x-2 '>Name
-                        <input className='contactInput' type="text" placeholder='Name' />
-                        <input className='contactInput' type="email" placeholder='Email' />
+                <form onSubmit={handleSubmit(onSubmit)} className=' flex space-y-1 w-fit mx-auto text-green-500 sm:text-yellow-600 sm:space-y-2 sm:flex flex-col  md:text-blue-600 lg:text-yellow-500 xl:text-yellow-600 '>
+                    <div className='space-x-1 sm:flex sm:space-x-2 '>
+                        <input {...register('name')} className='contactInput' type="text" placeholder='Name' />
+                        <input {...register('email')} className='contactInput' type="email" placeholder='Email' />
                     </div>
-                    <input className='contactInput py-0 sm:px-1 sm:py-1' type="text" placeholder='Subject' />
+                    <input {...register('subject')} className='contactInput py-0 sm:px-1 sm:py-1' type="text" placeholder='Subject' />
 
 
-                    <textarea className='contactInput ' placeholder='Message' />
-                    <button type='submit' className='bg-[#F7AB0A] py-4 px-10 rounded-md text-black font-bold text-lg'>Submit</button>
+                    <textarea {...register('message')} className='contactInput ' placeholder='Message' />
+                    <button type='submit' className='bg-[#F7AB0A] py-4 px-10 rounded-md text-black font-bold sm:text-lg'>Submit</button>
                 </form>
             </div>
         </div>
