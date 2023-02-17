@@ -29,8 +29,8 @@ export default defineType({
       type: 'date',
     }),
     defineField({
-      name: 'dataEnded',
-      title: 'DataEnded',
+      name: 'dateEnded',
+      title: 'DateEnded',
       type: 'date',
     }),
     defineField({
@@ -38,12 +38,14 @@ export default defineType({
       title: 'IsCurrentlyWorkingHere',
       type: 'boolean',
     }),
+
     defineField({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
       of: [{ type: "reference", to: { type: "skill" } }],
     }),
+
     defineField({
       name: 'points',
       title: 'Points',

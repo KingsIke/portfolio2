@@ -1,5 +1,5 @@
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
-import type { NextPage } from 'next'
 import { Inter } from '@next/font/google'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
@@ -9,12 +9,28 @@ import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact/Contact'
 import Link from 'next/link'
+import { type } from 'os'
+import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { fetchPageInfo } from '@/utils/fetchPageInfo'
+import { fetchExperiences } from '@/utils/fetchExperience'
+import { fetchSkills } from '@/utils/fetchSkills'
+import { fetchProjects } from '@/utils/fetchProject'
+import { fetchSocial } from '@/utils/fetchSocials'
+// import social from '@/portfolio-kingsike/schemas/social'
 
+
+type Props = {
+  pageInfo: PageInfo;
+  experience: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[]
+}
 
 
 // const inter = Inter({ subsets: ['latin'] })
 
-const Home: NextPage = () => {
+const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
   return (
     <div className='bg-[rgb(21,21,21)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
@@ -23,21 +39,21 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Header */}
-      <Header />
+      <Header socials={socials} />
       {/* Hero */}
 
       <section id="hero" className='snap-start'>
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       {/* About */}
       <section id='about' className='snap-center'>
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       {/* Experience */}
       <section id='experience' className='snap-center'>
-        <WorkExperience />
+        <WorkExperience experiences={experience} />
       </section>
 
       {/* Skill */}
@@ -69,3 +85,22 @@ const Home: NextPage = () => {
   )
 }
 export default Home
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo()
+  const experience: Experience[] = await fetchExperiences()
+  const skills: Skill[] = await fetchSkills()
+  const projects: Project[] = await fetchProjects()
+  const socials: Social[] = await fetchSocial()
+
+  return {
+    props: {
+      pageInfo,
+      experience,
+      skills,
+      projects,
+      socials
+    },
+    revalidate: 10,
+  }
+}
