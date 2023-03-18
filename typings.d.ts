@@ -5,7 +5,7 @@ interface SanityBody {
     _updatedAt: string
 }
 
-export interface Image extends SanityBody {
+interface Image {
     _type: "image";
     asset: {
         _ref: string;

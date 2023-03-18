@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
+// import { Inter } from '@next/font/google'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -9,7 +9,8 @@ import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact/Contact'
 import Link from 'next/link'
-import { type } from 'os'
+// import { type } from 'os'
+
 import { Experience, PageInfo, Project, Skill, Social } from '../typings'
 import { fetchPageInfo } from '@/utils/fetchPageInfo'
 import { fetchExperiences } from '@/utils/fetchExperience'
@@ -21,7 +22,7 @@ import { fetchSocial } from '@/utils/fetchSocials'
 
 type Props = {
   pageInfo: PageInfo;
-  experience: Experience[];
+  experiences: Experience[];
   skills: Skill[];
   projects: Project[];
   socials: Social[]
@@ -30,7 +31,9 @@ type Props = {
 
 // const inter = Inter({ subsets: ['latin'] })
 
-const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
+const Home = (
+  { pageInfo, experiences, skills, projects, socials }: Props
+) => {
   return (
     <div className='bg-[rgb(21,21,21)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
@@ -43,28 +46,32 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
       {/* Hero */}
 
       <section id="hero" className='snap-start'>
-        <Hero pageInfo={pageInfo} />
+        <Hero
+          pageInfo={pageInfo}
+        />
       </section>
 
       {/* About */}
       <section id='about' className='snap-center'>
-        <About pageInfo={pageInfo} />
+        <About
+          pageInfo={pageInfo}
+        />
       </section>
 
       {/* Experience */}
       <section id='experience' className='snap-center'>
-        <WorkExperience experiences={experience} />
+        <WorkExperience experiences={experiences} />
       </section>
 
       {/* Skill */}
 
       <section id='skills' className='snap-center'>
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       {/* Projects */}
       <section id='projects' className='snap-center'>
-        <Projects />
+        <Projects projects={projects} />
 
       </section>
 
@@ -76,7 +83,11 @@ const Home = ({ pageInfo, experience, skills, projects, socials }: Props) => {
       <Link href='#hero'>
         <footer className='sticky bottom-2 w-full cursor-pointer'>
           <div className="flex items-center justify-center">
-            <img className='h-10 w-10 mt-3 sm:h-20 sm:w-20 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' src="https://res.cloudinary.com/logistics-kingsike/image/upload/v1675074000/FOOD/WhatsApp_Image_2023-01-30_at_10.57.35_AM_tsfess.jpg" alt="" />
+            <img
+              className='h-10 w-10 mt-3 sm:h-20 sm:w-20 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
+              src="https://res.cloudinary.com/logistics-kingsike/image/upload/v1675074000/FOOD/WhatsApp_Image_2023-01-30_at_10.57.35_AM_tsfess.jpg"
+              alt=""
+            />
           </div>
 
         </footer>
@@ -88,7 +99,7 @@ export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo()
-  const experience: Experience[] = await fetchExperiences()
+  const experiences: Experience[] = await fetchExperiences()
   const skills: Skill[] = await fetchSkills()
   const projects: Project[] = await fetchProjects()
   const socials: Social[] = await fetchSocial()
@@ -96,7 +107,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       pageInfo,
-      experience,
+      experiences,
       skills,
       projects,
       socials

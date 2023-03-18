@@ -26,7 +26,7 @@ const Contact = ({ }) => {
             <div className='flex flex-col space-y-10 pt-10 ' >
 
                 <h4 className='text-xl sm:text-4xl font-semibold text-center leading-10'>You can contact me ☎️ <br />
-                    <span className='decoration-[#F7AB0A]/50 underline inline-block align-middle'> Don't Forget I Might be the Right Person</span>
+                    <span className='decoration-[#F7AB0A]/50 underline inline-block align-middle'> Don't Forget I'm the Right Person</span>
                 </h4>
 
                 <div className='space-y-4 sm:space-y-10'>
@@ -44,7 +44,7 @@ const Contact = ({ }) => {
                     <div className='flex items-center space-x-1 sm:space-x-5 justify-center '>
                         <MapPinIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
 
-                        <p className='text-l sm:text-2xl'>Nö 2 Olanrewaju Kingdom-Hall Lekki-Epe Express</p>
+                        <p className='text-l sm:text-2xl'>Nö 2 Olanrewaju Kingdom-Hall Lekki-Epe Express Lagos</p>
                     </div>
 
 

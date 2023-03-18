@@ -6,18 +6,18 @@ import { Experience } from "../../typings";
 const query = groq`
     *[_type == "experience"] {
     ...,
-    technologies[]
+    technologies[]->
     }
 `;
 
 type Data = {
-    experience: Experience[]
+    experiences: Experience[]
 }
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const experience: Experience[] = await sanityClient.fetch(query)
-    res.status(200).json({ experience })
+    const experiences: Experience[] = await sanityClient.fetch(query)
+    res.status(200).json({ experiences })
 }

@@ -46,7 +46,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 <p className='uppercase py-1 sm:py-5 text-gray-300'>{new Date(experience.dateStarted).toDateString()} - {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()}
                 </p>
 
-                <ul className=' space-y-0 text-xs sm:text-sm sm:space-y-0 list-disc  xl:space-y-4 ml-5 xl:text-md'>
+                <ul className=' space-y-0 text-xs sm:text-sm sm:space-y-0 list-disc h-80 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80  xl:space-y-4 ml-5 xl:text-md'>
                     {experience.points.map((point, i) => (
                         <li key={i}>{point}</li>
                     ))}
