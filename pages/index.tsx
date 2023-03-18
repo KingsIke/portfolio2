@@ -37,7 +37,7 @@ const Home = (
   return (
     <div className='bg-[rgb(21,21,21)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
-        <title>Kings=Ike Portfolio</title>
+        <title>{pageInfo.name} - Portfolio</title>
 
       </Head>
 
