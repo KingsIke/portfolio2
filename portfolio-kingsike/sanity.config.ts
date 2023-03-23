@@ -1,6 +1,4 @@
-import { defineConfig } from 'sanity'
-// import { defineConfig } from '@sanity/core'
-
+import { defineConfig } from 'sanity/lib/exports'
 import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
@@ -18,3 +16,6 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+
+
+// import {defineField, defineType} from 'sanity/lib/exports'
